@@ -3,7 +3,9 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('auth/login', { title: 'Gearev Place' });
+  res.render('place/index', {title : 'Place'});
 });
-
+router.get('/detail', function(req, res, next) {
+  res.render('place/detail', {title : 'Place Detail'});
+});
 module.exports = router;
