@@ -2,18 +2,38 @@
 <html>
   <head>
     <title>{{title}}</title>
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="images/android-desktop.png">
     <!-- Material Design fonts -->
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
+
+      <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Material Design Lite">
+    <link rel="apple-touch-icon-precomposed" href="/images/ios-desktop.png">
 
     <link rel="shortcut icon" href='/favicon.png' />
 
       <!-- bootstrap Material Design  -->
     <link rel='stylesheet' href='/bower_components/bootstrap/dist/css/bootstrap.min.css' />
     <link rel='stylesheet' href='/bower_components/bootstrap-material-design/dist/bootstrap-material-design.min.css' />
-    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel='stylesheet' href='/bower_components/bootstrap-material-design/dist/css/ripples.min.css' />
+    <link rel='stylesheet' href='/stylesheets/material.min.css'/>
     <link rel='stylesheet' href='/stylesheets/style.css'/>
+        <style>
+    #view-source {
+      position: fixed;
+      display: block;
+      right: 0;
+      bottom: 0;
+      margin-right: 40px;
+      margin-bottom: 40px;
+      z-index: 900;
+    }
+    </style>
   </head>
   <body>
     {{{body}}}
@@ -21,6 +41,7 @@
   <script src="/bower_components/jquery/dist/jquery.min.js"></script>
   <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="/bower_componentsbootstrap-material-design/js/bootstrapMaterialDesign.js"></script>
+  <script src="/javascripts/material.min.js"></script>
   <script src="/javascripts/main.js"></script>
   <script>
 </script>
