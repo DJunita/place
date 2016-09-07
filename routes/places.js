@@ -25,4 +25,16 @@ router.get('/', function index(req, res) {
     });
 });
 
+router.get('/:id', function index(req, res) {
+  var sql = "SELECT * FROM places where id = ?";
+  var inserts = [req.params.id];
+  sql = mysql.format(sql, inserts);
+    connection.query(sql, function (err, rows) {
+      if (err) throw err;
+      res.render('place/detail', {title : 'Detail Places',
+    place: rows[0]});
+    console.log(rows);
+    });
+});
+
 module.exports = router;
