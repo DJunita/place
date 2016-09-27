@@ -2,9 +2,6 @@ var express = require('express');
 var router = express.Router();
 var connection = require('../helper/connection');
 var mysql = require('mysql');
-var globalize = require('globalize');
-
-// Globalize
 
 /* GET home page. */
 /*router.get('/', function(req, res, next) {
