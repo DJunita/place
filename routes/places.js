@@ -17,6 +17,7 @@ router.get('/', function index(req, res) {
 });
 
 router.get('/create', function create(req, res) {
+  var test;
     console.log('tesssss');
   var create = {
     title: "Place - New Place",
@@ -50,7 +51,7 @@ router.post('/', function index(req, res) {
   delete req.body.id;
   delete req.body.updatedAt;
   delete req.body.createdAt;
-  var inserts ={'name' : req.body.name};
+  var inserts ={'name' : req.body.name, 'address':req.body.address,'description':req.body.description,'longitude':req.body.longitude,'latitude':req.body.latitude};
   inserts.createdAt = moment().format('YYYY-MM-DD HH:mm:ss');
   inserts.updatedAt = moment().format('YYYY-MM-DD HH:mm:ss');
   connection.query('INSERT INTO places SET ?', inserts, function (err, result) {
