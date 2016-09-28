@@ -20,6 +20,7 @@
     "bootstrap": "^3.3.7",
     "bootstrap-material-design": "^4.0.2",
     "material": "^0.1.1",
-    "material-design-lite": "^1.2.1"
+    "material-design-lite": "^1.2.1",
+    "materialize": "^0.97.7"
   }
 }
