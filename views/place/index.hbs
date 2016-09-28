@@ -36,14 +36,6 @@
     <main class="mdl-layout__content mdl-color--grey-100">
         <div class="mdl-grid demo-content">
             <div class="demo-graphs mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--12-col">
-                <div class="input-group custom-search-form">
-                    <input type="text" class="form-control" id="search-input" placeholder="Search...">
-                    <span class="input-group-btn">
-              <button class="btn btn-default" type="button" id="search-Place"><span class="glyphicon glyphicon-search"></span></button>
-                    <button type="button" class="btn btn-default" id="createPlace"><span class="glyphicon glyphicon-plus"></span></button>
-                    </span>
-                </div>
-                <br/>
                 <div id="placeList" class="list-group">
                     {{#each places}}
                         <a href="/places/{{id}}" id="place" class="list-group-item clearfix">
