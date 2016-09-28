@@ -46,11 +46,11 @@ router.get('/:id', function index(req, res) {
     });
 });
 
-router.post('/createplace', function index(req, res) {
+router.post('/', function index(req, res) {
   delete req.body.id;
   delete req.body.updatedAt;
   delete req.body.createdAt;
-  var inserts = req.body;
+  var inserts ={'name' : req.body.name};
   inserts.createdAt = moment().format('YYYY-MM-DD HH:mm:ss');
   inserts.updatedAt = moment().format('YYYY-MM-DD HH:mm:ss');
   connection.query('INSERT INTO places SET ?', inserts, function (err, result) {
