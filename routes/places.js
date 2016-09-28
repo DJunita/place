@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var connection = require('../helper/connection');
 var mysql = require('mysql');
+var moment = require('moment');
 
 /* GET home page. */
 
@@ -15,6 +16,25 @@ router.get('/', function index(req, res) {
     });
 });
 
+router.get('/create', function create(req, res) {
+    console.log('tesssss');
+  var create = {
+    title: "Place - New Place",
+    navigationTitle: 'New Place',
+    action: '/create',
+    create: true,
+    data: {
+      name: 'name',
+      address: 'address',
+      description: 'description',
+      longitude: 'longitude',
+      latitude: 'latitude'
+    },
+  };
+
+  res.render('place/detail', create);
+});
+
 router.get('/:id', function index(req, res) {
   var sql = "SELECT * FROM places where id = ?";
   var inserts = [req.params.id];
@@ -26,37 +46,18 @@ router.get('/:id', function index(req, res) {
     });
 });
 
-router.get('/create', function create(req, res) {
-    console.log('tesssss');
-  var create = {
-    title: "Place - New Place",
-    navigationTitle: 'New Place',
-    action: '/create',
-    create: true,
-    data: {
-      name: 'name',
-      address: 'address',
-      description: 'description'
-    },
-  };
-
-  res.render('place/create', create);
-});
-
-router.post('/', function index(req, res) {
-  console.log('123');
+router.post('/createplace', function index(req, res) {
   delete req.body.id;
   delete req.body.updatedAt;
   delete req.body.createdAt;
   var inserts = req.body;
   inserts.createdAt = moment().format('YYYY-MM-DD HH:mm:ss');
   inserts.updatedAt = moment().format('YYYY-MM-DD HH:mm:ss');
-  //inserts.createdBy = req.user.id;
   connection.query('INSERT INTO places SET ?', inserts, function (err, result) {
     if (err) throw err;
     var contype = req.headers['content-type'];
     if (!contype || contype.indexOf('application/json') !== 0)
-      res.redirect('/places/create');
+      res.redirect('/places');
     else
       res.send(result.insertId.toString());
   });
