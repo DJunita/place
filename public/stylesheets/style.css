@@ -1,6 +1,12 @@
 html, body {
   font-family: 'Roboto', 'Helvetica', sans-serif;
 }
+#mapdiv {
+	margin: 0;
+	padding: 0;
+	width: 660px;
+	height: 400px;
+}
 .btn{
   padding: 0px 14px;
 }
