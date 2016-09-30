@@ -4,15 +4,14 @@ html, body {
 .btn{
   padding: 0px 14px;
 }
-@media (min-width: 480px) {
-  .btn{
+.btn-detail{
     padding-left: 49px;
     padding-right: 49px;
     max-height: 100%;
     max-width: 100%;
     font-weight: 14px;
 }
-  }
+
 .demo-avatar {
   width: 48px;
   height: 48px;
